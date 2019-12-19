@@ -16,6 +16,8 @@
 
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.data;
 
+import android.content.Context;
+
 import java.util.List;
 
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountException;
@@ -26,6 +28,8 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
  * AccountDAO interface can be used to access the account details, including listing, adding, updating, removing
  * accounts and updating account balance.
  */
+
+
 public interface AccountDAO {
 
     /***
@@ -33,6 +37,7 @@ public interface AccountDAO {
      *
      * @return - list of account numbers as String
      */
+
     public List<String> getAccountNumbersList();
 
     /***
@@ -56,7 +61,7 @@ public interface AccountDAO {
      *
      * @param account - the account to be added.
      */
-    public void addAccount(Account account);
+    public void addAccount(Account account, Context context);
 
     /***
      * Remove an account from the accounts collection.

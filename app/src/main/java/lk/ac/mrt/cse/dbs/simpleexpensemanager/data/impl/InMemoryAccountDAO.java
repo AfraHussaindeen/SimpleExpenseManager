@@ -16,6 +16,8 @@
 
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +35,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 public class InMemoryAccountDAO implements AccountDAO {
     private final Map<String, Account> accounts;
 
-    public InMemoryAccountDAO() {
+    public InMemoryAccountDAO(Context context) {
         this.accounts = new HashMap<>();
     }
 
@@ -57,7 +59,7 @@ public class InMemoryAccountDAO implements AccountDAO {
     }
 
     @Override
-    public void addAccount(Account account) {
+    public void addAccount(Account account, Context context) {
         accounts.put(account.getAccountNo(), account);
     }
 

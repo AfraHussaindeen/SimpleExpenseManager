@@ -96,7 +96,7 @@ public class AddAccountFragment extends Fragment implements View.OnClickListener
 
                 if (currentExpenseManager != null) {
                     currentExpenseManager.addAccount(accountNumStr, bankNameStr, accountHolderStr,
-                            Double.parseDouble(initialBalanceStr));
+                            Double.parseDouble(initialBalanceStr),getActivity());
                 }
                 cleanUp();
                 break;

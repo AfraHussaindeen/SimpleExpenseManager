@@ -16,6 +16,8 @@
 
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.control;
 
+import android.content.Context;
+
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
@@ -87,9 +89,9 @@ public abstract class ExpenseManager implements Serializable {
      * @param accountHolderName
      * @param initialBalance
      */
-    public void addAccount(String accountNo, String bankName, String accountHolderName, double initialBalance) {
+    public void addAccount(String accountNo, String bankName, String accountHolderName, double initialBalance, Context context) {
         Account account = new Account(accountNo, bankName, accountHolderName, initialBalance);
-        accountsHolder.addAccount(account);
+        accountsHolder.addAccount(account, context);
     }
 
     /***
@@ -133,4 +135,5 @@ public abstract class ExpenseManager implements Serializable {
      * objects will be initialized.
      */
     public abstract void setup() throws ExpenseManagerException;
+
 }
